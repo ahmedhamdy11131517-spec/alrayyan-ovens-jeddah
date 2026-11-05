@@ -39,6 +39,8 @@
     .services-line span{border:1px solid var(--line);padding:7px 13px;border-radius:12px;background:rgba(255,255,255,.028);font-size:.9rem}
     .actions{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:11px 26px;border-radius:15px;font-weight:900;transition:transform .2s;border:1px solid transparent}
+    .hero .actions .btn,.cta .actions .btn{min-height:46px;padding:8px 16px;border-radius:12px;font-size:.96rem}
+    .hero .actions .btn .wa-icon,.cta .actions .btn .wa-icon{width:21px;height:21px;flex-basis:21px}
     .btn:hover{transform:translateY(-2px)}
     .btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-strong);outline-offset:3px}
     .btn-call{color:#211507;background:linear-gradient(135deg,#fbe5af,#c79a4c);box-shadow:0 14px 35px rgba(194,141,46,.14)}
@@ -54,8 +56,13 @@
     .card{padding:30px 24px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(150deg,rgba(233,195,110,.09),rgba(255,255,255,.025));box-shadow:0 10px 35px rgba(0,0,0,.12)}
     .card h3{font-size:1.35rem;margin:0 0 8px;color:var(--gold)}
     .card p{margin:0;color:#fff;line-height:1.9;text-align:center}
-    .showcase{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#141008;box-shadow:0 23px 70px rgba(0,0,0,.4)}
-    .showcase img{width:100%;height:auto;max-height:780px;object-fit:contain;margin:auto}
+    #before-after .wrap{width:min(1220px,calc(100% - 20px))}
+    .showcase{position:relative;margin:0;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#141008;box-shadow:0 23px 70px rgba(0,0,0,.4)}
+    .showcase img{width:100%;height:auto;max-height:none;object-fit:contain;margin:auto}
+    .compare-tag{position:absolute;top:clamp(10px,2.5vw,18px);z-index:2;padding:5px 16px;border-radius:999px;background:rgba(10,8,7,.88);border:1px solid var(--gold-strong);color:#fff;font-size:clamp(.83rem,2vw,1rem);font-weight:900;box-shadow:0 4px 16px rgba(0,0,0,.45)}
+    .compare-before{left:clamp(10px,2.5vw,18px)}
+    .compare-after{right:clamp(10px,2.5vw,18px)}
+    .compare-note{padding:10px 12px;color:var(--muted);text-align:center;font-size:.82rem;line-height:1.7;background:rgba(8,7,6,.8)}
     .cta{padding:42px 25px;text-align:center;background:linear-gradient(110deg,#241b10,#100c07);border:1px solid rgba(243,204,118,.4);border-radius:27px}
     .cta p{color:var(--muted);line-height:1.8;margin:0 0 24px}
     .cta .actions{justify-content:center}
@@ -169,13 +176,13 @@
         align-items:stretch;
       }
       .mobile .btn{
-        width:100%;min-width:0;min-height:52px;height:52px;
-        padding:8px 10px;gap:8px;border-radius:13px;
-        font-size:clamp(.95rem,3.7vw,1.08rem);
+        width:100%;min-width:0;min-height:46px;height:46px;
+        padding:7px 8px;gap:6px;border-radius:11px;
+        font-size:clamp(.88rem,3.5vw,.99rem);
         line-height:1.3;white-space:nowrap;
       }
       .mobile .btn .wa-icon,.mobile .btn .call-icon{
-        width:22px;height:22px;flex:0 0 22px;
+        width:20px;height:20px;flex:0 0 20px;
       }
       .mobile .btn .call-icon{display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
       .mobile .btn .wa-label{font-size:inherit}
@@ -203,7 +210,7 @@
         <div class="services-line"><span>صيانة الأفران</span><span>تنظيف الأفران</span><span>جدة</span></div>
         <div class="actions">
           <a class="btn btn-call" href="tel:+966560349982">☎ اتصال مباشر</a>
-          <a class="btn btn-wa" href="https://wa.me/966560349982" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
+          <a class="btn btn-wa" href="https://wa.me/966560349982?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D9%81%D8%B1%D9%86%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
         </div>
       </div>
       <div class="hero-frame">
@@ -222,8 +229,8 @@
   </section>
   <section class="section" id="before-after" aria-labelledby="before-after-title">
     <div class="wrap">
-      <div class="section-heading"><h2 id="before-after-title">صورة قبل وبعد تنظيف فرن</h2><p>الصورة المقدمة ضمن مواد شركة الريان.</p></div>
-      <div class="showcase"><img src="assets/oven-before-after.webp" width="1254" height="1254" alt="مقارنة مصورة قبل وبعد تنظيف فرن" loading="lazy"></div>
+      <div class="section-heading"><h2 id="before-after-title">✨ شاهد الفرق قبل وبعد التنظيف ✨</h2><p>مقارنة توضيحية لمظهر الفرن قبل التنظيف وبعده.</p></div>
+      <figure class="showcase"><span class="compare-tag compare-before" aria-hidden="true">قبل</span><span class="compare-tag compare-after" aria-hidden="true">بعد</span><img src="assets/oven-before-after.webp" width="1254" height="1254" alt="صورة توضيحية لمقارنة منظر فرن قبل التنظيف وبعده" loading="lazy"><figcaption class="compare-note">هذه صورة توضيحية وليست توثيقًا لعملية تنظيف فعلية.</figcaption></figure>
     </div>
   </section>
   <section class="section">
@@ -232,7 +239,7 @@
       <p>للاستفسار عن صيانة أو تنظيف الأفران، اتصل بنا أو راسلنا على واتساب.</p>
       <div class="actions">
         <a class="btn btn-call" href="tel:+966560349982">☎ 0560349982</a>
-        <a class="btn btn-wa" href="https://wa.me/966560349982" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
+        <a class="btn btn-wa" href="https://wa.me/966560349982?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D9%81%D8%B1%D9%86%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
       </div>
     </div>
   </section>
@@ -240,7 +247,7 @@
 <footer><div><b>جميع الحقوق محفوظة © 2026 | شركة الريان</b></div><div>مواعيد العمل: يوميًا من 8 صباحًا إلى 11 مساءً</div><div>العنوان: جدة - العزيزية</div></footer>
 <div class="mobile" aria-label="طرق التواصل">
   <a class="btn btn-call" href="tel:+966560349982"><svg class="call-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.91.68 2.82a2 2 0 0 1-.45 2.11L8.05 9.91a16 16 0 0 0 6 6l1.26-1.26a2 2 0 0 1 2.11-.45c.91.33 1.86.56 2.82.68A2 2 0 0 1 22 16.92z"/></svg><span>اتصال</span></a>
-  <a class="btn btn-wa" href="https://wa.me/966560349982" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
+  <a class="btn btn-wa" href="https://wa.me/966560349982?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D9%81%D8%B1%D9%86%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a14 14 0 0 0-12 21.2L2 30l7-1.9A14 14 0 1 0 16 2zm0 25.4c-2.4 0-4.6-.7-6.5-1.9l-.4-.2-4 .9 1.1-3.9-.3-.5A11.4 11.4 0 1 1 16 27.4zm6.4-8.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6-.1-.2-.6-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.3 3.6 5.6 5 .8.4 1.4.6 1.9.8.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.7.3-1.4.2-1.5 0-.1-.3-.3-.6-.4z"/></svg><span class="wa-label">واتساب</span></a>
 </div>
 </body>
 </html>
