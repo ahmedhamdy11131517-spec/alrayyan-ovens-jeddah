@@ -39,8 +39,10 @@
     .services-line span{border:1px solid var(--line);padding:7px 13px;border-radius:12px;background:rgba(255,255,255,.028);font-size:.9rem}
     .actions{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:11px 26px;border-radius:15px;font-weight:900;transition:transform .2s;border:1px solid transparent}
-    .hero .actions .btn,.cta .actions .btn{min-height:46px;padding:8px 16px;border-radius:12px;font-size:.96rem}
-    .hero .actions .btn .wa-icon,.cta .actions .btn .wa-icon{width:21px;height:21px;flex-basis:21px}
+    .hero .actions,.cta .actions{justify-content:center;gap:10px}
+    .hero .actions .btn,.cta .actions .btn{flex:0 1 auto;width:auto;min-height:40px;padding:6px 11px;border-radius:10px;font-size:.88rem;white-space:nowrap}
+    .hero .actions .btn .wa-icon,.cta .actions .btn .wa-icon{width:19px;height:19px;flex-basis:19px}
+    @media(max-width:640px){.hero .actions .btn,.cta .actions .btn{flex:0 1 auto;min-height:40px;padding:6px 10px;font-size:.86rem}}
     .btn:hover{transform:translateY(-2px)}
     .btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-strong);outline-offset:3px}
     .btn-call{color:#211507;background:linear-gradient(135deg,#fbe5af,#c79a4c);box-shadow:0 14px 35px rgba(194,141,46,.14)}
@@ -229,7 +231,7 @@
   </section>
   <section class="section" id="before-after" aria-labelledby="before-after-title">
     <div class="wrap">
-      <div class="section-heading"><h2 id="before-after-title">✨ شاهد الفرق قبل وبعد التنظيف ✨</h2><p>مقارنة توضيحية لمظهر الفرن قبل التنظيف وبعده.</p></div>
+      <div class="section-heading"><h2 id="before-after-title">شاهد الفرق قبل وبعد التنظيف</h2></div>
       <figure class="showcase"><span class="compare-tag compare-before" aria-hidden="true">قبل</span><span class="compare-tag compare-after" aria-hidden="true">بعد</span><img src="assets/oven-before-after.webp" width="1254" height="1254" alt="صورة توضيحية لمقارنة منظر فرن قبل التنظيف وبعده" loading="lazy"><figcaption class="compare-note">هذه صورة توضيحية وليست توثيقًا لعملية تنظيف فعلية.</figcaption></figure>
     </div>
   </section>
