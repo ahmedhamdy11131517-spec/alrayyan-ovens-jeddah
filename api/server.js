@@ -54,8 +54,9 @@ const server = http.createServer(async (req, res) => {
   if (req.url !== "/event" || !["POST", "OPTIONS"].includes(req.method)) return send(res, 404, { error: "not_found" });
   if (origin !== SITE_ORIGIN) return send(res, 403, { error: "origin_denied" });
   if (req.method === "OPTIONS") return send(res, 204, {}, origin);
-  if (!trimmedText(req.headers["content-type"], 120).startsWith("application/json")) {
-    return send(res, 415, { error: "json_only" }, origin);
+  const contentType = trimmedText(req.headers["content-type"], 120).toLowerCase();
+  if (!contentType.startsWith("application/json") && !contentType.startsWith("text/plain")) {
+    return send(res, 415, { error: "json_or_beacon_only" }, origin);
   }
   if (!ACCESS_TOKEN) return send(res, 503, { error: "missing_server_credential" }, origin);
   const clientIp = trimmedText(req.headers["x-forwarded-for"], 300).split(",")[0].trim() || req.socket.remoteAddress || "unknown";
